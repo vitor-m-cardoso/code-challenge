@@ -12,7 +12,7 @@ export default function Form() {
       <h1 className="h2">Cálculo da área de pintura:</h1>
       <div>
         <section>
-          <h2>Primeira parede:</h2>
+          <h2 className="h4">Primeira parede:</h2>
           <div>
             <Input
               label="Altura: "
