@@ -1,9 +1,11 @@
 import React from 'react';
+import './App.css';
+import Form from './components/Form';
 
 function App() {
   return (
     <>
-      <h1>Hello Code Challenge!</h1>
+      <Form />
     </>
   );
 }
