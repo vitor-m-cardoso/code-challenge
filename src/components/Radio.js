@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Radio = ({ options, value, setValue, ...props }) => {
+export default function Radio({ options, value, setValue, ...props }) {
   return (
     <>
       { options.map((option) => (
@@ -9,13 +9,12 @@ const Radio = ({ options, value, setValue, ...props }) => {
             type="radio"
             value={ option }
             checked={ value === option }
-            onChange={ ({ target: { value } }) => setValue(value) }
+            onChange={({ target }) => setValue(target.value)}
             { ...props }
           />
+          { option }
         </label>
-      )) }
+      ))}
     </>
   );
 };
-
-export default Radio;
