@@ -24,6 +24,8 @@ export default function Form() {
   const [thirdWallQtyWindow, setThirdWallQtyWindow] = useState("0");
   const [fourthWallQtyWindow, setFourthWallQtyWindow] = useState("0");
 
+  const [selectedPaintValue, setSelectedPaintValue] = useState("0,5 L");
+
   return (
     <form>
       <h1 className="h2">Cálculo da área de pintura:</h1>
@@ -166,7 +168,21 @@ export default function Form() {
           </div>
         </section>
       </div>
-
+      <section>
+        <h2 className="h4">Selecione o tamanho da embalagem que será utilizada:</h2>
+        <Radio
+          options={["0,5 L", "2,5 L", "3,6 L", "18 L"]}
+          value={ selectedPaintValue }
+          setValue={ setSelectedPaintValue }
+        />
+      </section>
+      <section>
+        <button
+          type="button"
+        >
+          Calcular
+        </button>
+      </section>
     </form>
   );
 };
