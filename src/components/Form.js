@@ -1,4 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import {
+  firstWallHeightAndWidth,
+  secondWallHeightAndWidth,
+  thirdWallHeightAndWidth,
+  fourthWallHeightAndWidth,
+} from '../redux/actions/wallHeightAndWidthActions';
 
 import Input from './Input';
 import Radio from './Radio';
@@ -25,6 +33,8 @@ export default function Form() {
   const [fourthWallQtyWindow, setFourthWallQtyWindow] = useState("0");
 
   const [selectedPaintValue, setSelectedPaintValue] = useState("0,5 L");
+
+  const dispatch = useDispatch();
 
   const minHeight = 2.20;
   const minWidth = 1;
@@ -61,6 +71,25 @@ export default function Form() {
   } else if (fourthWidthValue > maxWidth) {
     setFourthWidthValue(maxWidth);
   };
+
+  const handleDispatchHeightAndWidthWallCalc = () => {
+    if (firstHeightValue && firstWidthValue) {
+      dispatch(firstWallHeightAndWidth(firstHeightValue, firstWidthValue));
+    };
+    if (secondHeightValue && secondWidthValue) {
+      dispatch(secondWallHeightAndWidth(secondHeightValue, secondWidthValue));
+    };
+    if (thirdHeightValue && thirdWidthValue) {
+      dispatch(thirdWallHeightAndWidth(thirdHeightValue, thirdWidthValue));
+    };
+    if (fourthHeightValue && fourthWidthValue) {
+      dispatch(fourthWallHeightAndWidth(fourthHeightValue, fourthWidthValue));
+    };
+  };
+
+  const handleClick = () => {
+    handleDispatchHeightAndWidthWallCalc();
+  }
 
   return (
     <form>
@@ -214,6 +243,7 @@ export default function Form() {
       <section>
         <button
           type="button"
+          onClick={ () => handleClick() }
         >
           Calcular
         </button>
