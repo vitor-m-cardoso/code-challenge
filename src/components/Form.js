@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
   firstWallHeightAndWidth,
@@ -44,6 +44,16 @@ export default function Form() {
   const [selectedPaintValue, setSelectedPaintValue] = useState("0,5 L");
 
   const dispatch = useDispatch();
+
+  const firstDoorAreaIsValid = useSelector((state) => state.isValidAreaReducer.doors.first);
+  const secondDoorAreaIsValid = useSelector((state) => state.isValidAreaReducer.doors.second);
+  const thirdDoorAreaIsValid = useSelector((state) => state.isValidAreaReducer.doors.third);
+  const fourthDoorAreaIsValid = useSelector((state) => state.isValidAreaReducer.doors.fourth);
+
+  const firstWindowAreaIsValid = useSelector((state) => state.isValidAreaReducer.windows.first);
+  const secondWindowAreaIsValid = useSelector((state) => state.isValidAreaReducer.windows.second);
+  const thirdWindowAreaIsValid = useSelector((state) => state.isValidAreaReducer.windows.third);
+  const fourthWindowAreaIsValid = useSelector((state) => state.isValidAreaReducer.windows.fourth);
 
   const minHeight = 2.20;
   const minWidth = 1;
@@ -150,6 +160,11 @@ export default function Form() {
               value={ firstWallQtyDoor }
               setValue={ setFirstWallQtyDoor }
             />
+            { firstDoorAreaIsValid ? '' : (
+              <p className="h6 text-danger mb-4">
+                Área total das portas excede a metade da área total da parede, por favor, preencha novamente.
+              </p>
+            ) }
           </div>
           <div>
             <h3 className="h5">Quantidade de janelas:</h3>
@@ -158,6 +173,11 @@ export default function Form() {
               value={ firstWallQtyWindow }
               setValue={ setFirstWallQtyWindow }
             />
+            { firstWindowAreaIsValid ? '' : (
+              <p className="h6 text-danger mb-4">
+                Área total das janelas excede a metade da área total da parede, por favor, preencha novamente.
+              </p>
+            ) }
           </div>
         </section>
 
@@ -184,6 +204,11 @@ export default function Form() {
               value={ secondWallQtyDoor }
               setValue={ setSecondWallQtyDoor }
             />
+            { secondDoorAreaIsValid ? '' : (
+              <p className="h6 text-danger mb-4">
+                Área total das portas excede a metade da área total da parede, por favor, preencha novamente.
+              </p>
+            ) }
           </div>
           <div>
           <h3 className="h5">Quantidade de janelas:</h3>
@@ -192,6 +217,11 @@ export default function Form() {
               value={ secondWallQtyWindow }
               setValue={ setSecondWallQtyWindow }
             />
+            { secondWindowAreaIsValid ? '' : (
+              <p className="h6 text-danger">
+                Área total das janelas excede a metade da área total da parede, por favor, preencha novamente.
+              </p>
+            ) }
           </div>
         </section>
       </div>
@@ -219,6 +249,11 @@ export default function Form() {
               value={ thirdWallQtyDoor }
               setValue={ setThirdWallQtyDoor }
             />
+            { thirdDoorAreaIsValid ? '' : (
+              <p className="h6 text-danger mb-4">
+                Área total das portas excede a metade da área total da parede, por favor, preencha novamente.
+              </p>
+            ) }
           </div>
           <div>
             <h3 className="h5">Quantidade de janelas:</h3>
@@ -227,6 +262,11 @@ export default function Form() {
               value={ thirdWallQtyWindow }
               setValue={ setThirdWallQtyWindow }
             />
+            { thirdWindowAreaIsValid ? '' : (
+              <p className="h6 text-danger mb-4">
+                Área total das janelas excede a metade da área total da parede, por favor, preencha novamente.
+              </p>
+            ) }
           </div>
         </section>
 
@@ -253,6 +293,11 @@ export default function Form() {
               value={ fourthWallQtyDoor }
               setValue={ setFourthWallQtyDoor }
             />
+            { fourthDoorAreaIsValid ? '' : (
+              <p className="h6 text-danger mb-4">
+                Área total das portas excede a metade da área total da parede, por favor, preencha novamente.
+              </p>
+            ) }
           </div>
           <div>
             <h3 className="h5">Quantidade de janelas:</h3>
@@ -261,6 +306,11 @@ export default function Form() {
               value={ fourthWallQtyWindow }
               setValue={ setFourthWallQtyWindow }
             />
+            { fourthWindowAreaIsValid ? '' : (
+              <p className="h6 text-danger mb-4">
+                Área total das janelas excede a metade da área total da parede, por favor, preencha novamente.
+              </p>
+            ) }
           </div>
         </section>
       </div>
