@@ -7,12 +7,14 @@ import {
   thirdWallHeightAndWidth,
   fourthWallHeightAndWidth,
 } from '../redux/actions/wallHeightAndWidthActions';
+
 import {
   firstDoorAndWindowArea,
   secondDoorAndWindowArea,
   thirdDoorAndWindowArea,
   fourthDoorAndWindowArea,
 } from '../redux/actions/doorsAndWindowsActions';
+
 import {
   selectedPaint
 } from '../redux/actions/selectedPaintAction';
