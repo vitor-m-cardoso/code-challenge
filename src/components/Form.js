@@ -13,6 +13,9 @@ import {
   thirdDoorAndWindowArea,
   fourthDoorAndWindowArea,
 } from '../redux/actions/doorsAndWindowsActions';
+import {
+  selectedPaint
+} from '../redux/actions/selectedPaintAction';
 
 import Input from './Input';
 import Radio from './Radio';
@@ -108,10 +111,17 @@ export default function Form() {
     };
   };
 
+  const handleDispatchSelectedPaint = () => {
+    if (selectedPaintValue) {
+      dispatch(selectedPaint(selectedPaintValue));
+    };
+  };
+
   const handleClick = () => {
     handleDispatchHeightAndWidthWallCalc();
     handleDispatchDoorsAndWindowsArea();
-  }
+    handleDispatchSelectedPaint();
+  };
 
   return (
     <form>
