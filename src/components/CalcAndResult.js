@@ -111,6 +111,12 @@ export default function CalcAndResult() {
     return result;
   };
 
+  const handleCalcTotalArea = () => {
+    const result = (parseFloat(calcFirstArea()) + parseFloat(calcSecondArea()) + parseFloat(calcThirdArea()) + parseFloat(calcFourthArea())).toFixed(2);
+
+    return result;
+  };
+
   return (
     <section>
       <h1 className="h2">Resultado:</h1>
