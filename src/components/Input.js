@@ -9,6 +9,7 @@ const Input = ({ id, label, setValue, ...props }) => {
         id={ id }
         name={ id }
         onChange={({ target: { value } }) => setValue(value) }
+        { ...props }
       />
     </>
   );

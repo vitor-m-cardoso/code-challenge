@@ -26,6 +26,42 @@ export default function Form() {
 
   const [selectedPaintValue, setSelectedPaintValue] = useState("0,5 L");
 
+  const minHeight = 2.20;
+  const minWidth = 1;
+  const maxWidth = 15;
+
+  if (firstHeightValue < minHeight) {
+    setFirstHeightValue(minHeight);
+  } else if (firstWidthValue < minWidth) {
+    setFirstWidthValue(minWidth);
+  } else if (firstWidthValue > maxWidth) {
+    setFirstWidthValue(maxWidth);
+  };
+
+  if (secondHeightValue < minHeight) {
+    setSecondHeightValue(minHeight);
+  } else if (secondWidthValue < minWidth) {
+    setSecondWidthValue(minWidth);
+  } else if (secondWidthValue > maxWidth) {
+    setSecondWidthValue(maxWidth);
+  };
+
+  if (thirdHeightValue < minHeight) {
+    setThirdHeightValue(minHeight);
+  } else if (thirdWidthValue < minWidth) {
+    setThirdWidthValue(minWidth);
+  } else if (thirdWidthValue > maxWidth) {
+    setThirdWidthValue(maxWidth);
+  };
+
+  if (fourthHeightValue < minHeight) {
+    setFourthHeightValue(minHeight);
+  } else if (fourthWidthValue < minWidth) {
+    setFourthWidthValue(minWidth);
+  } else if (fourthWidthValue > maxWidth) {
+    setFourthWidthValue(maxWidth);
+  };
+
   return (
     <form>
       <h1 className="h2">Cálculo da área de pintura:</h1>
@@ -147,7 +183,6 @@ export default function Form() {
               label="Largura: "
               value={ fourthWidthValue }
               setValue={ setFourthWidthValue }
-              className="w-50 mb-3"
             />
           </div>
           <div>
