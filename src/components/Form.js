@@ -136,16 +136,17 @@ export default function Form() {
   };
 
   return (
-    <form>
+    <form className="d-flex flex-column align-items-center">
       <h1 className="h2">Cálculo da área de pintura:</h1>
-      <div>
-        <section>
+      <div className="d-flex">
+        <section className="m-4 my-3 col-12 col-md-5 border rounded bg-light bg-gradient box-shadow p-3">
           <h2 className="h4">Primeira parede:</h2>
           <div>
             <Input
               label="Altura: "
               value={ firstHeightValue }
               setValue={ setFirstHeightValue }
+              className="w-100 mb-2"
             />
           </div>
           <div>
@@ -153,14 +154,16 @@ export default function Form() {
               label="Largura: "
               value={ firstWidthValue }
               setValue={ setFirstWidthValue }
+              className="w-100 mb-3"
             />
           </div>
           <div>
-            <h3 className="h5">Quantidade de portas:</h3>
+            <h3 className="h5 mb-0">Quantidade de portas:</h3>
             <Radio
               options={["0", "1", "2", "3", "4", "5", "6"]}
               value={ firstWallQtyDoor }
               setValue={ setFirstWallQtyDoor }
+              className="m-1 mb-3"
             />
             { firstDoorAreaIsValid ? '' : (
               <p className="h6 text-danger mb-4">
@@ -169,11 +172,12 @@ export default function Form() {
             ) }
           </div>
           <div>
-            <h3 className="h5">Quantidade de janelas:</h3>
+            <h3 className="h5 mb-0">Quantidade de janelas:</h3>
             <Radio
               options={["0", "1", "2", "3", "4", "5", "6"]}
               value={ firstWallQtyWindow }
               setValue={ setFirstWallQtyWindow }
+              className="m-1 mb-3"
             />
             { firstWindowAreaIsValid ? '' : (
               <p className="h6 text-danger mb-4">
@@ -182,14 +186,14 @@ export default function Form() {
             ) }
           </div>
         </section>
-
-        <section>
+        <section className="m-4 my-3 col-12 col-md-5 border rounded bg-light bg-gradient box-shadow p-3">
           <h2 className="h4">Segunda parede:</h2>
           <div>
             <Input
               label="Altura: "
               value={ secondHeightValue }
               setValue={ setSecondHeightValue }
+              className="w-100 mb-2"
             />
           </div>
           <div>
@@ -197,14 +201,16 @@ export default function Form() {
               label="Largura: "
               value={ secondWidthValue }
               setValue={ setSecondWidthValue }
+              className="w-100 mb-3"
             />
           </div>
           <div>
-            <h3 className="h5">Quantidade de portas:</h3>
+            <h3 className="h5 mb-0">Quantidade de portas:</h3>
             <Radio
               options={["0", "1", "2", "3", "4", "5", "6"]}
               value={ secondWallQtyDoor }
               setValue={ setSecondWallQtyDoor }
+              className="m-1 mb-3"
             />
             { secondDoorAreaIsValid ? '' : (
               <p className="h6 text-danger mb-4">
@@ -213,11 +219,12 @@ export default function Form() {
             ) }
           </div>
           <div>
-          <h3 className="h5">Quantidade de janelas:</h3>
+          <h3 className="h5 mb-0">Quantidade de janelas:</h3>
             <Radio
               options={["0", "1", "2", "3", "4", "5", "6"]}
               value={ secondWallQtyWindow }
               setValue={ setSecondWallQtyWindow }
+              className="m-1 mb-3"
             />
             { secondWindowAreaIsValid ? '' : (
               <p className="h6 text-danger">
@@ -227,14 +234,15 @@ export default function Form() {
           </div>
         </section>
       </div>
-      <div>
-        <section>
-          <h2>Terceira parede:</h2>
+      <div className="d-flex">
+        <section className="m-4 my-3 col-12 col-md-5 border rounded bg-light bg-gradient box-shadow p-3">
+          <h2 className="h4">Terceira parede:</h2>
           <div>
             <Input
               label="Altura: "
               value={ thirdHeightValue }
               setValue={ setThirdHeightValue }
+              className="w-100 mb-2"
             />
           </div>
           <div>
@@ -242,14 +250,16 @@ export default function Form() {
               label="Largura: "
               value={ thirdWidthValue }
               setValue={ setThirdWidthValue }
+              className="w-100 mb-3"
             />
           </div>
           <div>
-            <h3 className="h5">Quantidade de portas:</h3>
+            <h3 className="h5 mb-0">Quantidade de portas:</h3>
             <Radio
               options={["0", "1", "2", "3", "4", "5", "6"]}
               value={ thirdWallQtyDoor }
               setValue={ setThirdWallQtyDoor }
+              className="m-1 mb-3"
             />
             { thirdDoorAreaIsValid ? '' : (
               <p className="h6 text-danger mb-4">
@@ -258,11 +268,12 @@ export default function Form() {
             ) }
           </div>
           <div>
-            <h3 className="h5">Quantidade de janelas:</h3>
+            <h3 className="h5 mb-0">Quantidade de janelas:</h3>
             <Radio
               options={["0", "1", "2", "3", "4", "5", "6"]}
               value={ thirdWallQtyWindow }
               setValue={ setThirdWallQtyWindow }
+              className="m-1 mb-3"
             />
             { thirdWindowAreaIsValid ? '' : (
               <p className="h6 text-danger mb-4">
@@ -271,14 +282,14 @@ export default function Form() {
             ) }
           </div>
         </section>
-
-        <section>
+        <section className="m-4 my-3 col-12 col-md-5 border rounded bg-light bg-gradient box-shadow p-3">
           <h2 className="h4">Quarta parede:</h2>
           <div>
             <Input
               label="Altura: "
               value={ fourthHeightValue }
               setValue={ setFourthHeightValue }
+              className="w-100 mb-2"
             />
           </div>
           <div>
@@ -286,14 +297,16 @@ export default function Form() {
               label="Largura: "
               value={ fourthWidthValue }
               setValue={ setFourthWidthValue }
+              className="w-100 mb-3"
             />
           </div>
           <div>
-            <h3 className="h5">Quantidade de portas:</h3>
+            <h3 className="h5 mb-0">Quantidade de portas:</h3>
             <Radio
               options={["0", "1", "2", "3", "4", "5", "6"]}
               value={ fourthWallQtyDoor }
               setValue={ setFourthWallQtyDoor }
+              className="m-1 mb-3"
             />
             { fourthDoorAreaIsValid ? '' : (
               <p className="h6 text-danger mb-4">
@@ -302,11 +315,12 @@ export default function Form() {
             ) }
           </div>
           <div>
-            <h3 className="h5">Quantidade de janelas:</h3>
+            <h3 className="h5 mb-0">Quantidade de janelas:</h3>
             <Radio
               options={["0", "1", "2", "3", "4", "5", "6"]}
               value={ fourthWallQtyWindow }
               setValue={ setFourthWallQtyWindow }
+              className="m-1 mb-3"
             />
             { fourthWindowAreaIsValid ? '' : (
               <p className="h6 text-danger mb-4">
@@ -316,18 +330,20 @@ export default function Form() {
           </div>
         </section>
       </div>
-      <section>
+      <section className="m-2 col-12 col-md-8 border rounded bg-light bg-gradient box-shadow p-3">
         <h2 className="h4">Selecione o tamanho da lata de tinta que será utilizada:</h2>
         <Radio
           options={["0,5 L", "2,5 L", "3,6 L", "18 L"]}
           value={ selectedPaintValue }
           setValue={ setSelectedPaintValue }
+          className="m-1"
         />
       </section>
       <section>
         <button
           type="button"
           onClick={ () => handleClick() }
+          className="btn btn-success mb-3 px-5"
         >
           Calcular
         </button>

@@ -141,14 +141,14 @@ export default function CalcAndResult() {
   };
 
   return (
-    <section>
+    <section className="d-flex flex-column align-items-center text-center">
       <h1 className="h2">Resultado:</h1>
-      <div>
-        { isNaN(handleCalcPaintVolume()) && isNaN(handleCalcTotalArea()) ? <p>Serão necessários um total de 0 L de tinta para pintar 0 m²</p> : (
+      <div className="h5 border rounded bg-light bg-gradient box-shadow text-center m-2 p-3">
+        { isNaN(handleCalcPaintVolume()) && isNaN(handleCalcTotalArea()) ? <p>Será necessário um total de 0 L de tinta para pintar 0 m²</p> : (
           <p>{`Serão necessários um total de ${handleCalcPaintVolume()} L de tinta para pintar ${handleCalcTotalArea()} m².`}</p>
         ) }
-        { !selectedPaint ? <p>Quantidade necessária de embalagens: 0. Utilizando a embalagem de 0 L.</p> : (
-          <p>{`Quantidade necessária de embalagens: ${handleCalcPaintResult()}. Utilizando a embalagem de ${selectedPaint}.`}</p>
+        { !selectedPaint ? <p>Quantidade de latas necessárias: 0. Utilizando a embalagem de 0 L.</p> : (
+          <p>{`Quantidade de latas necessárias: ${handleCalcPaintResult()}. Utilizando a embalagem de ${selectedPaint}.`}</p>
         ) }
       </div>
     </section>
