@@ -28,6 +28,8 @@ export default function CalcAndResult() {
   const thirdWindowArea = useSelector((state) => state.doorsAndWindowsReducer.thirdWall.areaWindowNum);
   const fourthWindowArea = useSelector((state) => state.doorsAndWindowsReducer.fourthWall.areaWindowNum);
   
+  const selectedPaint = useSelector((state) => state.selectedPaintReducer.selectedPaint);
+
   const maxDoorAndWindowFirstArea = (parseFloat(firstWallArea) / 2).toFixed(2);
   const maxDoorAndWindowSecondArea = (parseFloat(secondWallArea) / 2).toFixed(2);
   const maxDoorAndWindowThirdArea = (parseFloat(thirdWallArea) / 2).toFixed(2);
@@ -115,6 +117,27 @@ export default function CalcAndResult() {
     const result = (parseFloat(calcFirstArea()) + parseFloat(calcSecondArea()) + parseFloat(calcThirdArea()) + parseFloat(calcFourthArea())).toFixed(2);
 
     return result;
+  };
+
+  const handleCalcPaintVolume = () => {
+    const result = (parseFloat(handleCalcTotalArea()) / 5).toFixed(2);
+
+    return result;
+  }
+
+  const handleCalcPaintResult = () => {
+    switch (true) {
+      case selectedPaint === "0,5 L":
+        return (parseFloat(handleCalcPaintVolume()) / 0.5).toFixed(2);
+      case selectedPaint === "2,5 L":
+        return (parseFloat(handleCalcPaintVolume()) / 2.5).toFixed(2);
+      case selectedPaint === "3,6 L":
+        return (parseFloat(handleCalcPaintVolume()) / 3.6).toFixed(2);
+      case selectedPaint === "18 L":
+        return (parseFloat(handleCalcPaintVolume()) / 18).toFixed(2);
+      default:
+        return "0";
+    };
   };
 
   return (
