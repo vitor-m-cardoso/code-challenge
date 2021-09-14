@@ -18,15 +18,15 @@ export default function CalcAndResult() {
   const thirdWallArea = useSelector((state) => state.wallsReducer.thirdWall);
   const fourthWallArea = useSelector((state) => state.wallsReducer.fourthWall);
   
-  const firstDoorArea = useSelector((state) => state.doorsAndWindowsReducer.firstWall.areaDoorNum);
-  const secondDoorArea = useSelector((state) => state.doorsAndWindowsReducer.secondWall.areaDoorNum);
-  const thirdDoorArea = useSelector((state) => state.doorsAndWindowsReducer.thirdWall.areaDoorNum);
-  const fourthDoorArea = useSelector((state) => state.doorsAndWindowsReducer.fourthWall.areaDoorNum);
+  const firstDoorArea = useSelector((state) => state.doorsAndWindowsReducer.firstWall.areaDoor);
+  const secondDoorArea = useSelector((state) => state.doorsAndWindowsReducer.secondWall.areaDoor);
+  const thirdDoorArea = useSelector((state) => state.doorsAndWindowsReducer.thirdWall.areaDoor);
+  const fourthDoorArea = useSelector((state) => state.doorsAndWindowsReducer.fourthWall.areaDoor);
   
-  const firstWindowArea = useSelector((state) => state.doorsAndWindowsReducer.firstWall.areaWindowNum);
-  const secondWindowArea = useSelector((state) => state.doorsAndWindowsReducer.secondWall.areaWindowNum);
-  const thirdWindowArea = useSelector((state) => state.doorsAndWindowsReducer.thirdWall.areaWindowNum);
-  const fourthWindowArea = useSelector((state) => state.doorsAndWindowsReducer.fourthWall.areaWindowNum);
+  const firstWindowArea = useSelector((state) => state.doorsAndWindowsReducer.firstWall.areaWindow);
+  const secondWindowArea = useSelector((state) => state.doorsAndWindowsReducer.secondWall.areaWindow);
+  const thirdWindowArea = useSelector((state) => state.doorsAndWindowsReducer.thirdWall.areaWindow);
+  const fourthWindowArea = useSelector((state) => state.doorsAndWindowsReducer.fourthWall.areaWindow);
   
   const selectedPaint = useSelector((state) => state.selectedPaintReducer.selectedPaint);
 
@@ -143,6 +143,14 @@ export default function CalcAndResult() {
   return (
     <section>
       <h1 className="h2">Resultado:</h1>
+      <div>
+        { isNaN(handleCalcPaintVolume()) && isNaN(handleCalcTotalArea()) ? <p>Serão necessários um total de 0 L de tinta para pintar 0 m²</p> : (
+          <p>{`Serão necessários um total de ${handleCalcPaintVolume()} L de tinta para pintar ${handleCalcTotalArea()} m².`}</p>
+        ) }
+        { !selectedPaint ? <p>Quantidade necessária de embalagens: 0. Utilizando a embalagem de 0 L.</p> : (
+          <p>{`Quantidade necessária de embalagens: ${handleCalcPaintResult()}. Utilizando a embalagem de ${selectedPaint}.`}</p>
+        ) }
+      </div>
     </section>
   )
 }
