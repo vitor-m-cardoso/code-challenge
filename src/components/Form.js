@@ -7,6 +7,12 @@ import {
   thirdWallHeightAndWidth,
   fourthWallHeightAndWidth,
 } from '../redux/actions/wallHeightAndWidthActions';
+import {
+  firstDoorAndWindowArea,
+  secondDoorAndWindowArea,
+  thirdDoorAndWindowArea,
+  fourthDoorAndWindowArea,
+} from '../redux/actions/doorsAndWindowsActions';
 
 import Input from './Input';
 import Radio from './Radio';
@@ -87,8 +93,24 @@ export default function Form() {
     };
   };
 
+  const handleDispatchDoorsAndWindowsArea = () => {
+    if (firstWallQtyDoor && firstWallQtyWindow) {
+      dispatch(firstDoorAndWindowArea(firstWallQtyDoor, firstWallQtyWindow));
+    };
+    if (secondWallQtyDoor && secondWallQtyWindow) {
+      dispatch(secondDoorAndWindowArea(secondWallQtyDoor, secondWallQtyWindow));
+    };
+    if (thirdWallQtyDoor && thirdWallQtyWindow) {
+      dispatch(thirdDoorAndWindowArea(thirdWallQtyDoor, thirdWallQtyWindow));
+    };
+    if (fourthWallQtyDoor && fourthWallQtyWindow) {
+      dispatch(fourthDoorAndWindowArea(fourthWallQtyDoor, fourthWallQtyWindow));
+    };
+  };
+
   const handleClick = () => {
     handleDispatchHeightAndWidthWallCalc();
+    handleDispatchDoorsAndWindowsArea();
   }
 
   return (
