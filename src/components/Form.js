@@ -169,7 +169,7 @@ export default function Form() {
         </section>
       </div>
       <section>
-        <h2 className="h4">Selecione o tamanho da embalagem que será utilizada:</h2>
+        <h2 className="h4">Selecione o tamanho da lata de tinta que será utilizada:</h2>
         <Radio
           options={["0,5 L", "2,5 L", "3,6 L", "18 L"]}
           value={ selectedPaintValue }
